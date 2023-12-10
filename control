@@ -1,6 +1,6 @@
 Package: com.whitetailani.retakelite
 Name: retakelite
-Version: 0.1.1
+Version: 0.2.2
 Architecture: iphoneos-arm
 Description: Changes all of your autocorrect suggestions to "zefram"
 Maintainer: WhitetailAni

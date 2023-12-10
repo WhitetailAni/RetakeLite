@@ -27,14 +27,15 @@
 }
 
 + (TIZephyrCandidate *)zephyrSingle {
-    NSString *string = @"zefram";
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
 
     TIZephyrCandidate *blimp = [[TIZephyrCandidate alloc] init];
     blimp.continuousPathConversion = YES;
     [blimp setExcessPathRatio:1.9];
     blimp.dynamicUsageCount = 420;
     [blimp setDynamicPenaltyCount:2];
-    blimp.label = @"zefram";
+    blimp.label = string;
     blimp.alternativeText = string;
     blimp.annotationText = string;
     //[blimp setConfidence:2];
@@ -48,7 +49,8 @@
 }
 
 + (TIKeyboardCandidateSingle *)candidateSingle {
-    NSString *string = @"zefram";
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
     
     TIKeyboardCandidateSingle *aero = [[TIKeyboardCandidateSingle alloc] init];
     aero.alternativeText = string;
@@ -61,7 +63,8 @@
 }
 
 + (TIKeyboardCandidate *)kb {
-    NSString *string = @"zefram";
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
 
     TIKeyboardCandidate *cherry = [[TIKeyboardCandidate alloc] init];
     [cherry setAlternativeText:string];
@@ -79,6 +82,7 @@
 
 @end
 
+%group ZEFRAM
 
 %hook TIAutocorrectionList
 
@@ -176,7 +180,9 @@
 }
 
 -(void)setCandidate:(NSString *)arg1 {
-    %orig(@"zefram");
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
+    %orig(string);
 }
 
 -(id)initWithCandidate:(id)arg1 {
@@ -235,11 +241,15 @@
 }
 
 -(NSString *)candidate {
-    return @"zefram";
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
+    return string;
 }
 
 -(NSString *)label {
-    return @"zefram";
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
+    return string;
 }
 
 -(BOOL)isAutocorrection {
@@ -380,16 +390,23 @@
 %hook TUITypedStringCandidate
 
 -(void)setDisplayLabel:(NSString *)arg1 {
-    %orig(@"zefram");
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
+    %orig(string);
 }
 
 -(NSString *)displayLabel {
-    return @"zefram";
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
+    return string;
 }
 
 +(id)typedStringCandidateWithLocale:(id)arg1 typedString:(id)arg2 rawTypedString:(id)arg3 {
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
+
     TUITypedStringCandidate *commandLineInterface = [[TUITypedStringCandidate alloc] init];
-    commandLineInterface.displayLabel = @"zefram";
+    commandLineInterface.displayLabel = string;
     return commandLineInterface;
 }
 
@@ -419,7 +436,11 @@
 
 -(void)setTextLabel:(UILabel *)arg1 {
     UILabel *arg2 = arg1;
-    arg2.text = @"zefram";
+    
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
+    
+    arg2.text = string;
     
     %orig(arg2);
 }
@@ -427,7 +448,10 @@
 -(UILabel *)textLabel {
     UILabel *label = [[UILabel alloc] init];
     
-    label.text = @"zefram";
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
+    
+    label.text = string;
     
     return label;
 }
@@ -449,11 +473,17 @@
 }
 
 -(NSString *)text {
-    return @"zefram";
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
+
+    return string;
 }
 
 -(void)setText:(NSString *)arg1 {
-    return %orig(@"zefram");
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    NSString *string = [preferences valueForKey:@"Overcorrection"];
+
+    return %orig(string);
 }
 
 -(UIColor *)textColor {
@@ -461,3 +491,12 @@
 }
 
 %end
+
+%end
+
+%ctor {
+    NSDictionary *preferences = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.whitetailani.retakelite_prefs.plist"];
+    if ([preferences valueForKey:@"OvercorrectMe"]) {
+        %init(ZEFRAM);
+    }
+}

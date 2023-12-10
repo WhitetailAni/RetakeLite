@@ -9,6 +9,7 @@ include $(THEOS)/makefiles/common.mk
 TWEAK_NAME = retakelite
 
 retakelite_PRIVATE_FRAMEWORKS += TextInput TextInputUI
+retakelite_PREFERENCES = ./retakelite_prefs
 Libraries += TextInput TextInputUI
 
 LDFLAGS += -v
@@ -17,3 +18,5 @@ retakelite_FILES = Tweak.x
 retakelite_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+SUBPROJECTS += retakelite_prefs
+include $(THEOS_MAKE_PATH)/aggregate.mk

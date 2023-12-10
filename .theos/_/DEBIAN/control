@@ -6,5 +6,5 @@ Author: WhitetailAni
 Section: Tweaks
 Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 14.0)
 Architecture: iphoneos-arm
-Version: 0.1.1-2+debug
-Installed-Size: 236
+Version: 0.2.2-1+debug
+Installed-Size: 428

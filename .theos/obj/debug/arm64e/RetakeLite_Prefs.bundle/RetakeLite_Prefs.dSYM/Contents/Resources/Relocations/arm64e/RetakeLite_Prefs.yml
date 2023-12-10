@@ -1,0 +1,9 @@
+---
+triple:          'arm64e-apple-darwin'
+binary-path:     '/Users/whitetailani/Documents/retakelite/src/.theos/obj/debug/arm64e/RetakeLite_Prefs.bundle/RetakeLite_Prefs'
+relocations:
+  - { offsetInCU: 0x1E, offset: 0x1E, size: 0x8, addend: 0x0, symName: '-[RLRootListController specifiers]', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0xB0 }
+  - { offsetInCU: 0x236E, offset: 0x236E, size: 0x8, addend: 0x0, symName: '-[RLRootListController specifiers]', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0xB0 }
+  - { offsetInCU: 0x23A4, offset: 0x23A4, size: 0x8, addend: 0x0, symName: '-[RLRootListController hammerJBMe]', symObjAddr: 0xB0, symBinAddr: 0x40B0, symSize: 0x90 }
+  - { offsetInCU: 0x23D6, offset: 0x23D6, size: 0x8, addend: 0x0, symName: '-[RLRootListController action]', symObjAddr: 0x140, symBinAddr: 0x4140, symSize: 0x14 }
+...

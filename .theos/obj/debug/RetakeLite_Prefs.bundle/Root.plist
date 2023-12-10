@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>After changing the overcorrection string you'll need to close and reopen any app that you wish to affect. This includes SpringBoard, so best to do a respring.</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.whitetailani.retakelite_prefs</string>
+			<key>key</key>
+			<string>OvercorrectMe</string>
+			<key>label</key>
+			<string>Overcorrect Me</string>
+			<key>PostNotification</key>
+			<string>com.whitetailani.retakelite</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>default</key>
+			<string>zefram</string>
+			<key>defaults</key>
+			<string>com.whitetailani.retakelite_prefs</string>
+			<key>key</key>
+			<string>Overcorrection</string>
+			<key>label</key>
+			<string>Overcorrection String:</string>
+			<key>noAutoCorrect</key>
+			<true/>
+			<key>placeholder</key>
+			<string>zefram</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>hammerJB me</string>
+			<key>action</key>
+			<string>hammerJBMe</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>RetakeLite</string>
+</dict>
+</plist>
