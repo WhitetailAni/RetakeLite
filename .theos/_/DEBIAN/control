@@ -1,0 +1,10 @@
+Package: com.whitetailani.retakelite
+Name: retakelite
+Description: Changes all of your autocorrect suggestions to "zefram"
+Maintainer: WhitetailAni
+Author: WhitetailAni
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
+Architecture: iphoneos-arm
+Version: 0.1.0-17+debug
+Installed-Size: 236
